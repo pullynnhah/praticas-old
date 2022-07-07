@@ -1,0 +1,32 @@
+body {
+  background-color: #fafafa;
+}
+
+.header {
+  height: 64px;
+  background-color: #333;
+  text-align: center;
+}
+
+.memes {
+  margin-bottom: 100px;
+}
+
+.meme {
+  width: 640px;
+  background-color: #fff;
+  margin: 30px auto 0;
+  border: 1px solid #eaeaea;
+  box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  color: #aa4653;
+  font-size: 48px;
+  font-weight: bold;
+  margin: 30px;
+}
+
+p {
+  margin: 0 30px 30px;
+}
