@@ -2,7 +2,8 @@ import cors from "cors";
 import express from "express";
 
 const app = express();
-app.use(cors);
+app.use(cors());
+app.use(express.json());
 
 const holidays = [
   {date: "1/1/2022", name: "Confraternização mundial"},
@@ -22,7 +23,7 @@ app.get("/holidays", (req, res) => {
   res.send(holidays);
 });
 
-app.get("holidays/:month", (req, res) => {
+app.get("/holidays/:month", (req, res) => {
   const {month} = req.params;
   res.send(holidays.filter(holiday => Number(holiday.date.split("/")[0]) === Number(month)));
 });
@@ -32,3 +33,5 @@ app.get("/is-today-holiday", (req, res) => {
   const holiday = holidays.find(holiday => holiday.date === today.toLocaleString("en-us"));
   res.send(holiday ? `Sim, hoje é ${holiday.name}` : "Não, hoje não é feriado");
 });
+
+app.listen(5000);
