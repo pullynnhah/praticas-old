@@ -25,7 +25,7 @@ app.get("/holidays", (req, res) => {
 
 app.get("/holidays/:month", (req, res) => {
   const {month} = req.params;
-  res.send(holidays.filter(holiday => Number(holiday.date.split("/")[0]) === Number(month)));
+  res.send(holidays.filter(holiday => holiday.date.split("/")[0] === month));
 });
 
 app.get("/is-today-holiday", (req, res) => {
